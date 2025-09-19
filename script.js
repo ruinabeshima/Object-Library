@@ -55,6 +55,12 @@ function BookDisplay(){
       bookReadOrNot.textContent = "NOT READ"
     }
     newDiv.appendChild(bookReadOrNot)
+
+    // Add delete button 
+    const deleteButton = document.createElement("button")
+    deleteButton.textContent = "Delete"
+    deleteButton.id = "delete-book"
+    newDiv.appendChild(deleteButton)
   }
 }
 
@@ -99,7 +105,6 @@ function CreateNewBook(){
     CloseModal()
   })
 }
-
 
 //main
 const libraryContainer = document.getElementById("library-container")

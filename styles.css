@@ -15,17 +15,17 @@ body {
 }
 
 #page-title {
-  margin-top: 2rem; 
+  margin-top: -10rem; 
   margin-bottom: 2rem; 
 }
 
 #library-container {
   width: 80%; 
-  height: 70%;
+  height: 80%;
   display: grid; 
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 2rem;   
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;  
+  margin-bottom: 1rem;  
 }
 
 .book-container {
@@ -35,6 +35,10 @@ body {
   flex-direction: column; 
   margin-top: auto; 
   font-size: 0.75rem; 
+  border-radius: 0.5rem; 
+  padding: 1rem; 
+  background-color: rgb(232, 228, 228); 
+  border: 3px solid rgb(122, 122, 237); 
 }
 
 .book-container > p {
@@ -51,7 +55,7 @@ body {
   font-weight: bold; 
 }
 
-#new-book, #form-submit {
+#new-book, #form-submit{
   margin-top: 1rem; 
   padding-top: 0.75rem; 
   padding-bottom: 0.75rem; 
@@ -60,9 +64,26 @@ body {
   background-color: rgb(122, 122, 237); 
   color: white; 
   border-radius: 0.5rem; 
+  border: 3px solid black; 
 }
 
-#new-book:hover, #form-submit:hover {
+#delete-book{
+  width: 5rem; 
+  margin-top: 1rem; 
+  background-color: rgb(163, 232, 156); 
+  border: 1px solid black; 
+  font-size: 0.75rem; 
+  padding-top: 0.5rem; 
+  padding-bottom: 0.5rem; 
+  border-radius: 0.5rem; 
+}
+
+#delete-book:hover {
+  background-color: rgb(204, 231, 201);
+  cursor: pointer; 
+}
+
+#new-book:hover, #form-submit:hover{
   background-color:  rgb(159, 159, 252);
   cursor: pointer; 
 }
