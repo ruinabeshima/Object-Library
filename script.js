@@ -42,7 +42,7 @@ function BookDisplay(){
 
     // Add pages 
     const bookPages = document.createElement("p")
-    bookPages.textContent = book.pages
+    bookPages.textContent = book.pages + " pages"
     bookPages.classList.add("book-pages")
     newDiv.appendChild(bookPages)
 
@@ -139,9 +139,9 @@ const bookSubmit = document.getElementById("form-submit")
 
 
 
-AddBookToLibrary("A", "B", "C", true)
-AddBookToLibrary("E", "F", "G", false)
-AddBookToLibrary("I", "J", "K", true)
+AddBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", "178", true)
+AddBookToLibrary("Harry Potter", "J.K Rowling", "452", false)
+AddBookToLibrary("Alex Rider", "Anthony Horowitz", "129", true)
 BookDisplay()
 ShowModal()
 DeleteBook()
