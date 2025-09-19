@@ -2,18 +2,50 @@
   margin: 0; 
   padding: 0; 
   box-sizing: border-box; 
-  border: 1px solid red; 
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
   height: 100vh;
   width: 100vw; 
   display: flex; 
+  flex-direction: column; 
   justify-content: center; 
   align-items: center; 
 }
 
+h1 {
+  margin-bottom: 2rem; 
+}
+
 #library-container {
   width: 80%; 
-  height: 80%; 
+  height: 70%;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 2rem;   
+}
+
+.book-container {
+  border: 1px solid black; 
+  text-align: bottom; 
+  display: flex; 
+  flex-direction: column; 
+  margin-top: auto; 
+  font-size: 0.75rem; 
+}
+
+.book-container > p {
+  margin-top: 0.25rem; 
+}
+
+.book-title {
+  font-size: 1.5rem; 
+  font-style: italic; 
+  text-align: center; 
+}
+
+.book-read-or-not {
+  font-weight: bold; 
 }
