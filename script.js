@@ -20,6 +20,9 @@ function AddBookToLibrary(title, author, pages, readOrNot){
 
 // Loop through array and display book objects
 function BookDisplay(){
+  const BookDisplayDelete = document.querySelectorAll(".book-container")
+  BookDisplayDelete.forEach(element => element.remove())
+
   for (let book of myLibrary){
     const newDiv = document.createElement("div")
     newDiv.classList.add("book-container")
@@ -61,6 +64,9 @@ function ShowModal(){
     libraryContainer.style.display = "none"
     createNewBook.style.display = "none"
     pageTitle.style.display = "none"
+
+    CloseModal()
+    CreateNewBook()
   })
 }
 
@@ -71,8 +77,28 @@ function CloseModal(){
     createNewBook.style.display = "block"
     pageTitle.style.display = "block"
   })
+
+  bookSubmit.addEventListener("click", function(){
+    modal.style.display = "none"
+    libraryContainer.style.display = "grid"
+    createNewBook.style.display = "block"
+    pageTitle.style.display = "block"
+  })
 }
 
+function CreateNewBook(){
+  bookSubmit.addEventListener("click", function(){
+    title = newBookTitle.value 
+    author = newBookAuthor.value 
+    pages = newBookPages.value
+    readOrNot = newBookReadOrNot.checked
+    AddBookToLibrary(title, author, pages, readOrNot)
+    console.log(myLibrary)
+    BookDisplay()
+    event.preventDefault()
+    CloseModal()
+  })
+}
 
 
 //main
@@ -82,9 +108,16 @@ const modal = document.getElementById("modal")
 const modalClose = document.getElementById("modal-close")
 const pageTitle = document.getElementById("page-title")
 
+const newBookTitle = document.getElementById("new-book-title")
+const newBookAuthor = document.getElementById("new-book-author")
+const newBookPages = document.getElementById("new-book-pages")
+const newBookReadOrNot = document.getElementById("new-book-read-or-not")
+const bookSubmit = document.getElementById("form-submit")
+
+
 AddBookToLibrary("A", "B", "C", true)
 AddBookToLibrary("E", "F", "G", false)
 AddBookToLibrary("I", "J", "K", true)
 BookDisplay()
 ShowModal()
-CloseModal()
+
