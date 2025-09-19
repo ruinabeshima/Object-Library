@@ -57,6 +57,7 @@ function BookDisplay(){
 
 //main
 libraryContainer = document.getElementById("library-container")
+createNewBook = document.getElementById("new-book")
 
 addBookToLibrary("A", "B", "C", true)
 addBookToLibrary("E", "F", "G", false)

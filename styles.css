@@ -49,3 +49,19 @@ h1 {
 .book-read-or-not {
   font-weight: bold; 
 }
+
+#new-book {
+  margin-top: 1rem; 
+  padding-top: 0.75rem; 
+  padding-bottom: 0.75rem; 
+  padding-left: 0.5rem; 
+  padding-right: 0.5rem; 
+  background-color: rgb(122, 122, 237); 
+  color: white; 
+  border-radius: 0.5rem; 
+}
+
+#new-book:hover {
+  background-color:  rgb(159, 159, 252);
+  cursor: pointer; 
+}
