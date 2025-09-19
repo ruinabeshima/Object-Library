@@ -13,7 +13,7 @@ function Book(title, author, pages, readOrNot){
 }
 
 // Stores book objects in array
-function addBookToLibrary(title, author, pages, readOrNot){
+function AddBookToLibrary(title, author, pages, readOrNot){
   newBook = new Book(title, author, pages, readOrNot)
   myLibrary.push(newBook)
 }
@@ -55,11 +55,36 @@ function BookDisplay(){
   }
 }
 
-//main
-libraryContainer = document.getElementById("library-container")
-createNewBook = document.getElementById("new-book")
+function ShowModal(){
+  createNewBook.addEventListener("click", function(){
+    modal.style.display = "flex"
+    libraryContainer.style.display = "none"
+    createNewBook.style.display = "none"
+    pageTitle.style.display = "none"
+  })
+}
 
-addBookToLibrary("A", "B", "C", true)
-addBookToLibrary("E", "F", "G", false)
-addBookToLibrary("I", "J", "K", true)
+function CloseModal(){
+  modalClose.addEventListener("click", function(){
+    modal.style.display = "none"
+    libraryContainer.style.display = "grid"
+    createNewBook.style.display = "block"
+    pageTitle.style.display = "block"
+  })
+}
+
+
+
+//main
+const libraryContainer = document.getElementById("library-container")
+const createNewBook = document.getElementById("new-book")
+const modal = document.getElementById("modal")
+const modalClose = document.getElementById("modal-close")
+const pageTitle = document.getElementById("page-title")
+
+AddBookToLibrary("A", "B", "C", true)
+AddBookToLibrary("E", "F", "G", false)
+AddBookToLibrary("I", "J", "K", true)
 BookDisplay()
+ShowModal()
+CloseModal()
