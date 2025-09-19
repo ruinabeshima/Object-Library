@@ -67,7 +67,7 @@ body {
   border: 3px solid black; 
 }
 
-#delete-book{
+.delete-book{
   width: 5rem; 
   margin-top: 1rem; 
   background-color: rgb(163, 232, 156); 
@@ -78,7 +78,7 @@ body {
   border-radius: 0.5rem; 
 }
 
-#delete-book:hover {
+.delete-book:hover {
   background-color: rgb(204, 231, 201);
   cursor: pointer; 
 }

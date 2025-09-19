@@ -59,7 +59,8 @@ function BookDisplay(){
     // Add delete button 
     const deleteButton = document.createElement("button")
     deleteButton.textContent = "Delete"
-    deleteButton.id = "delete-book"
+    deleteButton.setAttribute("data-id", book.id)
+    deleteButton.classList.add("delete-book")
     newDiv.appendChild(deleteButton)
   }
 }
@@ -106,6 +107,22 @@ function CreateNewBook(){
   })
 }
 
+function DeleteBook(){
+  const bookDelete = document.querySelectorAll(".delete-book")
+  bookDelete.forEach(element => {
+    element.addEventListener("click", function(){
+      dataID = element.getAttribute("data-id")
+      let i = 0
+      while (myLibrary[i].id != dataID){
+        i += 1
+      }
+      myLibrary.splice(i, 1)
+      BookDisplay()
+      DeleteBook()
+      })
+    })
+  }
+
 //main
 const libraryContainer = document.getElementById("library-container")
 const createNewBook = document.getElementById("new-book")
@@ -120,9 +137,12 @@ const newBookReadOrNot = document.getElementById("new-book-read-or-not")
 const bookSubmit = document.getElementById("form-submit")
 
 
+
+
 AddBookToLibrary("A", "B", "C", true)
 AddBookToLibrary("E", "F", "G", false)
 AddBookToLibrary("I", "J", "K", true)
 BookDisplay()
 ShowModal()
+DeleteBook()
 
